@@ -1,0 +1,53 @@
+						INSTALLATION PROCESS
+
+1.download rhe linux
+2. download vmware
+3.download Winscp
+4.download jdk for linux
+5.download eclipse for linux
+
+
+
+follow the steps:
+1---->  double click on Vmware and install simply by following next next...
+2----> open Vmware and select first option create new virtual matchine
+3---->browse the location of the rhel linux file where you downloaded
+4----> Give username and passwod it will install Rhel
+5---->now install simly the Winscp on pc 
+
+6---->open Winscp select new it will ask for Host name
+(
+you can get host name like this:---
+Open Vmware go to RHEl and select Terminal .........give the command ......> ifconfig....it will give the inet address
+now use this inet address as a host name
+)
+
+7---> after host name Give user name as root   and password as a which you given in the installation of Rhel
+
+
+installation of jdk in linux:
+1-->Copy the downloaded jdk from windows to Linux by using Winscp using drag and drop option 
+(
+This procedure installs the Java Development Kit (JDK) for 64-bit Linux, using a self-extracting binary file. The JDK download includes the Java SE Runtime Environment (JRE) – you do not have to download the JRE separately.
+
+The name of the downloaded file has the following format:
+
+    jdk-6u
+             <version>-linux-x64.bin
+
+<version>
+    jdk-6u18-linux-x64.bin
+
+)
+2---> Make sure that execute permissions are set
+          Run this command: 
+          chmod +x 6u <version>-linux-x64.bin
+3---> Change directory to the location where you would like the files to be installed.
+4---> ./jdk-6u <version>-linux-x64.bin
+5---->to check the jdk is installed or not run the following command in terminal of Vmware
+		javac-----enter
+
+
+
+
+
