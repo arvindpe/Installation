@@ -1,0 +1,81 @@
+1.Add Oracle Java PPA to your system before proceeding with the installation of Java.
+
+sudo add-apt-repository -y ppa:webupd8team/java
+
+
+2.Update the repository database.
+sudo apt-get update
+
+3.Install Java 8 using the following command.
+
+sudo apt-get -y install oracle-java8-installer
+
+
+4.Verify the version of Java.
+
+java -version
+
+You should get similar output like below.
+
+java version "1.8.0_101"
+Java(TM) SE Runtime Environment (build 1.8.0_101-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.101-b13, mixed mode)
+
+
+5.Install Cassandra on Ubuntu 16.04:
+
+We will install Cassandra using official package available on Apache Software Foundation, 
+so add Cassandra repository to make the package available to your system.
+
+echo "deb http://www.apache.org/dist/cassandra/debian 36x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.list
+
+6.Add the public key for Cassandra repo so that you won’t encounter GPG error.
+
+gpg --keyserver pgp.mit.edu --recv-keys 749D6EEC0353B12C
+gpg --export --armor 749D6EEC0353B12C | sudo apt-key add -
+
+
+7..
+sudo apt-get update
+
+8.Install Cassandra.
+
+sudo apt-get install cassandra
+
+9.Controlling Cassandra:
+
+Start Cassandra using the following command.
+
+sudo service cassandra start
+
+To stop Cassandra, you can use the following command.
+
+sudo service cassandra stop
+
+Verify Cassandra is running successfully.
+
+sudo service cassandra status
+
+10.Verify Cassandra Cluster:
+
+If your previous command came with an expected output, you could verify the Cassandra cluster by executing the below command.
+
+sudo nodetool status
+
+11.Connect to Cassandra cluster using its command line interface cqlsh
+
+cqlsh
+
+
+12..IF GOT EROOR WHILE CONNECTION 
+
+Connection error: ('Unable to connect to any servers', {'127.0.0.1': TypeError('ref() does not take keyword arguments',)})
+
+Perform below actions.
+
+sudo apt install python-pip
+pip install cassandra-driver
+export CQLSH_NO_BUNDLED=true
+
+Now, you should be able to connect to Cassandra cluster.
+
